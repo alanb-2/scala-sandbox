@@ -1,6 +1,7 @@
-# scala-sbt-template
+# scala-sandbox
 
-Template repository to serve as a minimal base for Scala projects.  See `build.sbt` and `project` for library versions.
+Repository that contains modules used to test out scala features and libraries.  See the `README.md` in each module to 
+understand what each is testing.
 
 All commands are run from the project root.  Note that the examples are given for execution from the CLI.  Commands will 
 execute more quickly if the `sbt` shell is used instead.
@@ -15,14 +16,14 @@ execute more quickly if the `sbt` shell is used instead.
 
 1.  OPTIONAL: create a virtual environment to install pre-commit in e.g.
     ```shell
-    conda create -n scala-sbt-template python=3.9 
+    conda create -n scala-sandbox python=3.9 
     ```
     Note: it's recommended to create a new environment for each project that uses `pre-commit` so that the configurations
     do not need to be initialised when switching projects.
     
 2.  OPTIONAL: activate the virtual environment e.g.
     ```shell
-    conda activate scala-sbt-template
+    conda activate scala-sandbox
     ```
 
 3.  Install `pre-commit`

@@ -1,18 +1,21 @@
 import Dependencies._
 
-ThisBuild / organization := "org.my"
+ThisBuild / organization := "org.aeb.sandbox"
 ThisBuild / scalacOptions += ""
 ThisBuild / scalaVersion := "2.13.5"
 ThisBuild / version := "0.1"
 
-mainClass in (Compile, run) := Some("org.my.Main")
-mainClass in (Compile, packageBin) := Some("org.my.Main")
-mainClass in assembly := Some("org.my.Main")
-
 lazy val root = (project in file("."))
+  .aggregate(sprayJson)
   .enablePlugins(JavaAppPackaging)
   .settings(
-      name := "scala-sbt-template",
+      name := "scala-sandbox",
       libraryDependencies ++= rootDependencies,
       test in assembly := {}
+  )
+
+lazy val sprayJson = (project in file("spray-json"))
+  .settings(
+      name := "spray-json",
+      libraryDependencies ++= (rootDependencies ++ sprayJsonDependencies)
   )
