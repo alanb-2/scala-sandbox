@@ -1,4 +1,4 @@
-package org.aeb.sandbox.models
+package org.aeb.uk.sandbox.spray.models
 
 import spray.json._
 
