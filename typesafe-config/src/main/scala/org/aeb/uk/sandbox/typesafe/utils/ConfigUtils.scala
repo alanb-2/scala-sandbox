@@ -1,6 +1,6 @@
-package org.aeb.sandbox.utils
+package org.aeb.uk.sandbox.typesafe.utils
 
-import com.typesafe.config.{Config, ConfigFactory}
+import com.typesafe.config.Config
 
 import scala.collection.mutable.ArrayBuffer
 

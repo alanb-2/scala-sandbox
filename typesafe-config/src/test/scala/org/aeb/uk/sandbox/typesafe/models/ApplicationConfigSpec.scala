@@ -1,4 +1,4 @@
-package org.aeb.sandbox.models
+package org.aeb.uk.sandbox.typesafe.models
 
 import com.typesafe.config.{ConfigException, ConfigFactory}
 import org.scalatest.flatspec.AnyFlatSpec

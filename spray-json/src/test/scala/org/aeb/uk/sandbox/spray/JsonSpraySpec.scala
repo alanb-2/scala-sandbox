@@ -1,6 +1,6 @@
-package org.aeb.sandbox
+package org.aeb.uk.sandbox.spray
 
-import org.aeb.sandbox.models.{Address, Person}
+import org.aeb.uk.sandbox.spray.models.{Address, Person}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should
 import spray.json._
@@ -41,17 +41,13 @@ class JsonSpraySpec extends AnyFlatSpec with should.Matchers {
 
   it should "convert a class instance to an AST" in {
 
-    import Person._
-
     PersonObject.toJson shouldBe PersonAST
 
   }
 
   it should "convert an AST to a class instance" in {
 
-    import Person._
-
-    PersonAST.convertTo[Person]
+    PersonAST.convertTo[Person] shouldBe PersonObject
 
   }
 
