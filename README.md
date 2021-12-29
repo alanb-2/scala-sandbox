@@ -9,7 +9,7 @@ execute more quickly if the `sbt` shell is used instead.
 ## Prerequisites
 
 * Java 11
-* Sbt 1.4.7
+* Sbt 1.6.0
 * Python 3.6+
 
 ### pre-commit
