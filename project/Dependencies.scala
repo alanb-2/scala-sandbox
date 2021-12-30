@@ -2,6 +2,7 @@ import sbt._
 
 object Dependencies {
 
+  lazy val akkaVersion = "2.6.18"
   lazy val playJsonVersion = "2.9.2"
   lazy val scalaTestVersion = "3.2.5"
   lazy val sprayJsonVersion = "1.3.6"
@@ -13,6 +14,10 @@ object Dependencies {
   val rootDependencies = Seq(
       scalacticDependency % Test,
       scalaTestDependency % Test
+  )
+
+  val akkaDependencies = Seq(
+      "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion
   )
 
   val playJsonDependencies = Seq(

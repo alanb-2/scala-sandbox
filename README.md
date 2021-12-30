@@ -8,7 +8,7 @@ execute more quickly if the `sbt` shell is used instead.
 
 ## Prerequisites
 
-* Java 11
+* Java 17
 * Sbt 1.6.0
 * Python 3.6+
 
@@ -56,4 +56,10 @@ sbt clean test
 
 ```shell
 sbt clean jacoco
+```
+
+### Assembly
+
+```shell
+sbt clean assembly
 ```
