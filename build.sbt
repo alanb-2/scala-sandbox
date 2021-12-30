@@ -29,7 +29,7 @@ lazy val akkaBasic = (project in file("akka-basic"))
 
 lazy val akkaParentChild = (project in file("akka-parent-child"))
   .settings(
-    name := "akka-parent",
+    name := "akka-parent-child",
     libraryDependencies ++= (rootDependencies ++ akkaDependencies),
     assembly / mainClass := Some(s"${organization.value}.akka.parentchild.Main"),
     assembly / assemblyJarName := "akka-parent-child.jar"
