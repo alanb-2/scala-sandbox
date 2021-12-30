@@ -1,6 +1,6 @@
 # akka-basic
 
-Contains worked example for recipe 13.1 found in Chapter 13: Actors and Concurrency, Scala Cookbook, Alvin Alexander.
+Contains worked example for recipe 13.1-2 found in Chapter 13: Actors and Concurrency, Scala Cookbook, Alvin Alexander.
 
 ## Execute JAR
 
