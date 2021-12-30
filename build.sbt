@@ -9,6 +9,7 @@ lazy val root = (project in file("."))
   .aggregate(
     akkaBasic,
     akkaParentChild,
+    akkaState,
     playJson,
     sprayJson,
     typesafeConfig
@@ -33,6 +34,14 @@ lazy val akkaParentChild = (project in file("akka-parent-child"))
     libraryDependencies ++= (rootDependencies ++ akkaDependencies),
     assembly / mainClass := Some(s"${organization.value}.akka.parentchild.Main"),
     assembly / assemblyJarName := "akka-parent-child.jar"
+  )
+
+lazy val akkaState = (project in file("akka-state"))
+  .settings(
+    name := "akka-state",
+    libraryDependencies ++= (rootDependencies ++ akkaDependencies),
+    assembly / mainClass := Some(s"${organization.value}.akka.state.Main"),
+    assembly / assemblyJarName := "akka-state.jar"
   )
 
 lazy val playJson = (project in file("play-json"))
