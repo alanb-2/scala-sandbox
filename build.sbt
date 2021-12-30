@@ -8,6 +8,7 @@ ThisBuild / version := "0.1"
 lazy val root = (project in file("."))
   .aggregate(
     akkaBasic,
+    akkaParentChild,
     playJson,
     sprayJson,
     typesafeConfig
@@ -22,8 +23,16 @@ lazy val akkaBasic = (project in file("akka-basic"))
   .settings(
     name := "akka-basic",
     libraryDependencies ++= (rootDependencies ++ akkaDependencies),
-    assembly / mainClass := Some(s"${organization.value}.akka.Main"),
+    assembly / mainClass := Some(s"${organization.value}.akka.basic.Main"),
     assembly / assemblyJarName := "akka-basic.jar"
+  )
+
+lazy val akkaParentChild = (project in file("akka-parent-child"))
+  .settings(
+    name := "akka-parent",
+    libraryDependencies ++= (rootDependencies ++ akkaDependencies),
+    assembly / mainClass := Some(s"${organization.value}.akka.parentchild.Main"),
+    assembly / assemblyJarName := "akka-parent-child.jar"
   )
 
 lazy val playJson = (project in file("play-json"))

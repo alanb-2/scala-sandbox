@@ -1,4 +1,4 @@
-package uk.org.aeb.sandbox.akka
+package uk.org.aeb.sandbox.akka.basic
 
 import akka.actor.{Actor, ActorSystem, Props}
 
@@ -25,6 +25,6 @@ object Main extends App {
   Thread.sleep(1000)
 
   system.stop(helloActor)
-  system.terminate()
+  system.terminate
 
 }
