@@ -36,7 +36,7 @@ object Main extends App {
     Await.result(stopped, 3 seconds)
     println("HelloActor was stopped")
   } catch {
-    case e: Exception => e.printStackTrace
+    case e: Exception => e.printStackTrace()
   } finally {
     system.terminate
   }
