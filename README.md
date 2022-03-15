@@ -12,6 +12,8 @@ execute more quickly if the `sbt` shell is used instead.
 * Sbt 1.6.0
 * Python 3.6+
 
+
+
 ### pre-commit
 
 1.  Install `pre-commit`
