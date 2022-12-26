@@ -1,8 +1,9 @@
 import Dependencies._
 
 ThisBuild / organization := "uk.org.aeb.sandbox"
-ThisBuild / scalacOptions += ""
-ThisBuild / scalaVersion := "2.13.5"
+ThisBuild / scalacOptions ++= Seq("-deprecation")
+ThisBuild / scalafmtOnCompile := true
+ThisBuild / scalaVersion := "3.2.1"
 ThisBuild / version := "0.1"
 
 lazy val root = (project in file("."))
@@ -47,6 +48,8 @@ lazy val akkaState = (project in file("akka-state"))
 lazy val playJson = (project in file("play-json"))
   .settings(
       name := "play-json",
+      scalafmtOnCompile := false,
+      scalaVersion := "2.13.10",
       libraryDependencies ++= (rootDependencies ++ playJsonDependencies),
       assembly / assemblyMergeStrategy := {
         case x if x.endsWith("module-info.class") => MergeStrategy.discard

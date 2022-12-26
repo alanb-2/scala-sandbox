@@ -13,23 +13,21 @@ case object Angry
 
 class DrBruceBanner extends Actor {
 
-  def angryState: Receive = {
-    case Calm =>
-      println("Betty...")
-      context.become(normalState)
+  def angryState: Receive = { case Calm =>
+    println("Betty...")
+    context.become(normalState)
   }
 
   def normalState: Receive = {
-    case Frustrated =>
-      println("You wouldn't like me when I'm angry")
-    case Angry =>
+    case Frustrated => println("You wouldn't like me when I'm angry")
+    case Angry      =>
       println("HULKKK SMAAASH!")
       context.become(angryState)
   }
 
-  def receive ={
+  def receive = {
     case Angry => context.become(angryState)
-    case Calm => context.become(normalState)
+    case Calm  => context.become(normalState)
   }
 
 }
@@ -37,7 +35,7 @@ class DrBruceBanner extends Actor {
 object Main extends App {
 
   val system = ActorSystem("IncredibleHulk")
-  val drBruceBanner = system.actorOf(Props[DrBruceBanner], name = "DrBruceBanner")
+  val drBruceBanner = system.actorOf(Props[DrBruceBanner](), name = "DrBruceBanner")
 
   drBruceBanner ! Calm
   drBruceBanner ! Frustrated
@@ -52,8 +50,6 @@ object Main extends App {
     Await.result(stopped, 3 seconds)
   } catch {
     case e: Exception => e.printStackTrace()
-  } finally {
-    system.terminate
-  }
+  } finally system.terminate()
 
 }

@@ -9,22 +9,7 @@ execute more quickly if the `sbt` shell is used instead.
 ## Prerequisites
 
 * Java 17
-* Sbt 1.6.0
-* Python 3.6+
-
-### pre-commit
-
-1.  Install `pre-commit`
-    ```shell
-    pip install pre-commit
-    ```
-    
-2.  Configure `pre-commit`
-    ```shell
-    pre-commit install
-    ```
-
-For advanced configuration options see https://pre-commit.com/
+* Sbt 1.8.0
 
 ## Commands
 

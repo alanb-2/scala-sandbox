@@ -2,11 +2,11 @@ import sbt._
 
 object Dependencies {
 
-  lazy val akkaVersion = "2.6.18"
+  lazy val akkaVersion = "2.7.0"
   lazy val playJsonVersion = "2.9.2"
-  lazy val scalaTestVersion = "3.2.5"
+  lazy val scalaTestVersion = "3.2.14"
   lazy val sprayJsonVersion = "1.3.6"
-  lazy val typesafeConfigVersion = "1.4.1"
+  lazy val typesafeConfigVersion = "1.4.2"
 
   val scalacticDependency = "org.scalactic" %% "scalactic" % scalaTestVersion
   val scalaTestDependency = "org.scalatest" %% "scalatest" % scalaTestVersion
