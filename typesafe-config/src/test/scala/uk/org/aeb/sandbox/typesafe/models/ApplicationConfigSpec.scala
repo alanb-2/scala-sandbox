@@ -11,7 +11,10 @@ class ApplicationConfigSpec extends AnyFlatSpec with should.Matchers {
     val applicationConf = ConfigFactory.load("conf/valid-application.conf")
     val referenceConf = ConfigFactory.load("conf/reference.conf")
 
-    ApplicationConfig(applicationConf, referenceConf) shouldEqual ApplicationConfig("Bob", 62, Seq("tennis"))
+    ApplicationConfig(applicationConf, referenceConf) shouldEqual ApplicationConfig("Bob",
+                                                                                    62,
+                                                                                    Seq("tennis")
+    )
 
   }
 

@@ -16,9 +16,7 @@ class HelloActor(name: String) extends Actor {
 
   }
 
-  override def postStop() = {
-    println("HelloActor: postStop")
-  }
+  override def postStop() = println("HelloActor: postStop")
 
 }
 
@@ -37,8 +35,6 @@ object Main extends App {
     println("HelloActor was stopped")
   } catch {
     case e: Exception => e.printStackTrace()
-  } finally {
-    system.terminate
-  }
+  } finally system.terminate()
 
 }

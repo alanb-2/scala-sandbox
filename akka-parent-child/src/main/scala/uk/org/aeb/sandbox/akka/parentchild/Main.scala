@@ -9,13 +9,11 @@ class Child extends Actor {
 
   var name = "No name"
 
-  override def postStop(): Unit = {
-    println(s"D'oh!  They killed me ($name): ${self.path}")
-  }
+  override def postStop(): Unit = println(s"D'oh!  They killed me ($name): ${self.path}")
 
   def receive = {
     case Name(name) => this.name = name
-    case _ => println(s"Child $name received message")
+    case _          => println(s"Child $name received message")
   }
 
 }
@@ -25,9 +23,9 @@ class Parent extends Actor {
   def receive = {
     case CreateChild(name) =>
       println(s"Parent about to create child $name...")
-      val child = context.actorOf(Props[Child], name = s"$name")
+      val child = context.actorOf(Props[Child](), name = s"$name")
       child ! Name(name)
-    case _ => println(s"Parent received some other message.")
+    case _                 => println(s"Parent received some other message.")
   }
 
 }
@@ -35,7 +33,7 @@ class Parent extends Actor {
 object Main extends App {
 
   val system = ActorSystem("ParentChild")
-  val parent = system.actorOf(Props[Parent], name = "Parent")
+  val parent = system.actorOf(Props[Parent](), name = "Parent")
 
   parent ! CreateChild("Adam")
   parent ! CreateChild("Barbara")
@@ -47,6 +45,6 @@ object Main extends App {
   println("Adam was killed")
 
   Thread.sleep(5000)
-  system.terminate
+  system.terminate()
 
 }

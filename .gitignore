@@ -1,7 +1,14 @@
 # generic
+project/project
 target
 
-# editor
-.idea
+# intellij
 .bsp
+.idea
 *.iml
+
+# vscode
+.bloop
+.metals
+.vscode
+project/metals.sbt
