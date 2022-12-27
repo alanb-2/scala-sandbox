@@ -13,6 +13,11 @@ execute more quickly if the `sbt` shell is used instead.
 
 ## Commands
 
+To execute a command on a specific sub-project, prepend the command with the sub-project ID defined in the `build.sbt` + `/` e.g.
+```
+sbt zioConfig/test
+```
+
 ### Format
 
 ```shell
