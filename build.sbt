@@ -13,7 +13,8 @@ lazy val root = (project in file("."))
     akkaState,
     playJson,
     sprayJson,
-    typesafeConfig
+    typesafeConfig,
+    zioConfig
   )
   .enablePlugins(JavaAppPackaging)
   .settings(
@@ -70,5 +71,11 @@ lazy val typesafeConfig = (project in file("typesafe-config"))
       name := "typesafe-config",
       libraryDependencies ++= (rootDependencies ++ typesafeConfigDependencies)
   )
+
+lazy val zioConfig = (project in file("zio-config"))
+.settings(
+  name := "zio-config",
+  libraryDependencies ++= (zioDependencies ++ zioTestDependencies)
+)
 
 publishMavenStyle := true
